@@ -86,15 +86,14 @@
             var novoItem = document.getElementById(inputID).value;
             var novoElemento = document.createElement('li');
             novoElemento.textContent = novoItem;
-            novoElemento.innerHTML += ' <button onclick="apagarItem(this)">Apagar</button>';
             lista.appendChild(novoElemento);
             document.getElementById(inputID).value = '';
         }
 
         // Função para apagar um item da lista
         function apagarItem(botao) {
-            var item = botao.parentNode;
-            item.parentNode.removeChild(item);
+            var item = botao.parentNode.parentNode.querySelector('ul');
+            item.removeChild(item.lastElementChild);
         }
     </script>
 </body>
