@@ -82,18 +82,19 @@
     <script>
         // Função para adicionar um novo item à lista
         function adicionarItem(listaID, inputID) {
-            // Pega o elemento da lista pelo ID
             var lista = document.getElementById(listaID);
-            // Pega o valor do input pelo ID
             var novoItem = document.getElementById(inputID).value;
-            // Cria um novo elemento <li>
             var novoElemento = document.createElement('li');
-            // Define o texto do novo elemento <li>
             novoElemento.textContent = novoItem;
-            // Adiciona o novo elemento <li> à lista
+            novoElemento.innerHTML += ' <button onclick="apagarItem(this)">Apagar</button>';
             lista.appendChild(novoElemento);
-            // Limpa o valor do input
             document.getElementById(inputID).value = '';
+        }
+
+        // Função para apagar um item da lista
+        function apagarItem(botao) {
+            var item = botao.parentNode;
+            item.parentNode.removeChild(item);
         }
     </script>
 </body>
