@@ -1,5 +1,5 @@
 header{
-    background-color: aqua;
+    background-color: rgb(217, 222, 222);
     padding: 20px; 
     text-align: center;
     border-bottom: 5px solid #0e0e0e;
@@ -38,3 +38,18 @@ header h1 {
     margin: 0;
 }
 
+li{
+    background-color:rgb(96, 212, 230);
+    padding: 10px; 
+    border-bottom: 1px solid #0e0e0e;
+}
+
+input {
+    background-color: aliceblue;
+    padding: 5px; 
+}
+
+button{
+    background-color: rgb(25, 118, 216);
+    padding: 5px; 
+}
