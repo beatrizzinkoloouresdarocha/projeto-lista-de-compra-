@@ -11,3 +11,9 @@ h2{
     text-align: center;
     border-bottom: 5px solid #0d0230;
 }
+
+ul{
+    background-color: rgb(220, 229, 229);
+    text-align: center;
+    list-style-type: none; 
+}
