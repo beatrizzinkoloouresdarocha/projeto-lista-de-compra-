@@ -1,113 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Projeto Lista de Compras</title>
+    <title>Projeto lista de compra</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <header>
-        <h1>Lista de Compras</h1>
+    <h1>Lista de Compras</h1>
     </header>
-    
+
     <main>
-        <!-- Seção Frutas e Verduras -->
-        <section id="frutas-verduras" aria-labelledby="titulo-frutas-verduras">
-            <h2 id="titulo-frutas-verduras">Frutas e Verduras</h2>
-            <ul id="lista-frutas-verduras">
-                <li>Maçã</li>
-                <li>Banana</li>
-                <li>Uva</li>
-                <li>Melancia</li>
-                <li>Alface</li>
-            </ul>
-            <form onsubmit="adicionarItem('input-frutas-verduras', 'lista-frutas-verduras'); return false;">
-                <input type="text" id="input-frutas-verduras" placeholder="Adicionar item...">
-                <button type="submit">Adicionar</button>
-            </form>
-        </section>
+    <h2>Frutas e Verduras</h2>
+    <ul>
+        <li>Maçã</li>
+        <li>Banana</li>
+        <li>Uva</li>
+        <li>Melancia</li>
+        <li>Alface</li>
+    </ul>
 
-        <!-- Seção Produtos Diversos -->
-        <section id="produtos-diversos" aria-labelledby="titulo-produtos-diversos">
-            <h2 id="titulo-produtos-diversos">Produtos Diversos</h2>
-            <ul id="lista-produtos-diversos">
-                <li>Macarrão</li>
-                <li>Carne de frango</li>
-                <li>Chocolate</li>
-                <li>Vinho</li>
-                <li>Bolacha</li>
-                <li>Vinagre</li>
-                <li>Gelatina</li>
-                <li>Bolo</li>
-                <li>Leite</li>
-                <li>Celular</li>
-                <li>Salgadinhos</li>
-                <li>Brigadeiro</li>
-                <li>Óleo</li>
-                <li>Pão</li>
-                <li>Torta</li>
-                <li>Farinha de trigo</li>
-                <li>Tempero pronto</li>
-                <li>Açúcar</li>
-                <li>Fermento</li>
-            </ul>
-            <form onsubmit="adicionarItem('input-produtos-diversos', 'lista-produtos-diversos'); return false;">
-                <input type="text" id="input-produtos-diversos" placeholder="Adicionar item...">
-                <button type="submit">Adicionar</button>
-            </form>
-        </section>
+    <h2>Produtos diversos</h2>
+    <ul>
+        <li>Macarrão</li>
+        <li>Carne de frango</li>
+        <li>Chocolate</li>
+        <li>vinho</li>
+        <li>Bolacha</li>
+        <li>Vinagre</li>
+        <li>Gelatina</li>
+        <li>Bolo</li>
+        <li>Leite</li>
+        <li>Celular</li>
+        <li>Salgadinhos</li>
+        <li>Brigadeiro</li>
+        <li>Óleo</li>
+        <li>Pão</li>
+        <li>Torta</li>
+        <li>Farinha de trigo</li>
+        <li>Tempero pronto</li>
+        <li>Açucar</li>
+        <li>Fermento</li>
+    </ul>
 
-        <!-- Seção Carnes e Proteínas -->
-        <section id="carnes-proteinas" aria-labelledby="titulo-carnes-proteinas">
-            <h2 id="titulo-carnes-proteinas">Carnes e Proteínas</h2>
-            <ul id="lista-carnes-proteinas">
-                <li>Bife</li>
-                <li>Presunto</li>
-                <li>Linguiça</li>
-                <li>Frango</li>
-            </ul>
-            <!-- Adicionando um formulário para adicionar itens -->
-            <form onsubmit="adicionarItem('input-carnes-proteinas', 'lista-carnes-proteinas'); return false;">
-                <input type="text" id="input-carnes-proteinas" placeholder="Adicionar item...">
-                <button type="submit">Adicionar</button>
-            </form>
-        </section>
+    <h2>Carnes e proteinas</h2>
+    <ul>
+        <li>Bife</li>
+        <li>Presunto</li>
+        <li>Linguiça</li>
+        <li>Frango</li>
+    </ul>
 
-        <!-- Seção Produtos de Higiene -->
-        <section id="produtos-higiene" aria-labelledby="titulo-produtos-higiene">
-            <h2 id="titulo-produtos-higiene">Produtos de Higiene</h2>
-            <ul id="lista-produtos-higiene">
-                <li>Desodorante</li>
-                <li>Creme dental</li>
-                <li>Escova de dentes</li>
-                <li>Shampoo</li>
-                <li>Sabonete</li>
-            </ul>
-            <form onsubmit="adicionarItem('input-produtos-higiene', 'lista-produtos-higiene'); return false;">
-                <input type="text" id="input-produtos-higiene" placeholder="Adicionar item...">
-                <button type="submit">Adicionar</button>
-            </form>
-        </section>
-    </main>
-
-    <script>
-        function adicionarItem(inputId, listaId) {
-            var input = document.getElementById(inputId);
-            var lista = document.getElementById(listaId);
-            var novoItem = input.value.trim();
-
-            if (novoItem) {
-                var li = document.createElement('li');
-                li.textContent = novoItem;
-                lista.appendChild(li);
-                input.value = '';
-                input.focus();
-            } else {
-                alert('Por favor, insira um item.');
-            }
-        }
-    </script>
+    <h2>Produtos de higiene</h2>
+    <ul>
+        <li>Desodorante</li>
+        <li>Creme dental</li>
+        <li>Escova de dentes</li>
+        <li>Shampoos</li>
+        <li>Sabonetes</li>
+    </ul>
+    
 </body>
 </html>
