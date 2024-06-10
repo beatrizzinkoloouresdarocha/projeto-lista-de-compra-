@@ -2,14 +2,14 @@ header{
     background-color: aqua;
     padding: 20px; 
     text-align: center;
-    border-bottom: 5px solid #3208bc;
+    border-bottom: 5px solid #0e0e0e;
 }
 
 h2{
-    background-color: aqua;
+    background-color: rgb(75, 251, 239);
     padding: 20px; 
     text-align: center;
-    border-bottom: 5px solid #0d0230;
+    border-bottom: 5px solid #070707;
 }
 
 ul{
@@ -18,3 +18,17 @@ ul{
     list-style-type: none; 
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #bbbdbd;
+    color: #161617;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
