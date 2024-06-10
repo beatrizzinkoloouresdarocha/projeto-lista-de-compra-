@@ -52,4 +52,5 @@ input {
 button{
     background-color: rgb(25, 118, 216);
     padding: 5px; 
+    width: 5%;
 }
