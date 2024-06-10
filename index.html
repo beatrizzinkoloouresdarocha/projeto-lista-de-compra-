@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Projeto Lista de Compra</title>
+    <title>Projeto Lista de Compras</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -16,21 +16,23 @@
         <!-- Seção Frutas e Verduras -->
         <section id="frutas-verduras" aria-labelledby="titulo-frutas-verduras">
             <h2 id="titulo-frutas-verduras">Frutas e Verduras</h2>
-            <ul>
+            <ul id="lista-frutas-verduras">
                 <li>Maçã</li>
                 <li>Banana</li>
                 <li>Uva</li>
                 <li>Melancia</li>
                 <li>Alface</li>
             </ul>
-            <input type="text" id="input-frutas-verduras" placeholder="Adicionar item...">
-            <button onclick="adicionarItem('input-frutas-verduras', 'lista-frutas-verduras')">Adicionar</button>
+            <form onsubmit="adicionarItem('input-frutas-verduras', 'lista-frutas-verduras'); return false;">
+                <input type="text" id="input-frutas-verduras" placeholder="Adicionar item...">
+                <button type="submit">Adicionar</button>
+            </form>
         </section>
 
         <!-- Seção Produtos Diversos -->
         <section id="produtos-diversos" aria-labelledby="titulo-produtos-diversos">
             <h2 id="titulo-produtos-diversos">Produtos Diversos</h2>
-            <ul>
+            <ul id="lista-produtos-diversos">
                 <li>Macarrão</li>
                 <li>Carne de frango</li>
                 <li>Chocolate</li>
@@ -51,14 +53,16 @@
                 <li>Açúcar</li>
                 <li>Fermento</li>
             </ul>
-            <input type="text" id="input-produtos-diversos" placeholder="Adicionar item...">
-            <button onclick="adicionarItem('input-produtos-diversos', 'lista-produtos-diversos')">Adicionar</button>
+            <form onsubmit="adicionarItem('input-produtos-diversos', 'lista-produtos-diversos'); return false;">
+                <input type="text" id="input-produtos-diversos" placeholder="Adicionar item...">
+                <button type="submit">Adicionar</button>
+            </form>
         </section>
 
         <!-- Seção Carnes e Proteínas -->
         <section id="carnes-proteinas" aria-labelledby="titulo-carnes-proteinas">
             <h2 id="titulo-carnes-proteinas">Carnes e Proteínas</h2>
-            <ul>
+            <ul id="lista-carnes-proteinas">
                 <li>Bife</li>
                 <li>Presunto</li>
                 <li>Linguiça</li>
@@ -69,17 +73,21 @@
         <!-- Seção Produtos de Higiene -->
         <section id="produtos-higiene" aria-labelledby="titulo-produtos-higiene">
             <h2 id="titulo-produtos-higiene">Produtos de Higiene</h2>
-            <ul>
+            <ul id="lista-produtos-higiene">
                 <li>Desodorante</li>
                 <li>Creme dental</li>
                 <li>Escova de dentes</li>
-                <li>Shampoos</li>
-                <li>Sabonetes</li>
+                <li>Shampoo</li>
+                <li>Sabonete</li>
             </ul>
-            <input type="text" id="input-produtos-higiene" placeholder="Adicionar item...">
-            <button onclick="adicionarItem('input-produtos-higiene', 'lista-produtos-higiene')">Adicionar</button>
+            <form onsubmit="adicionarItem('input-produtos-higiene', 'lista-produtos-higiene'); return false;">
+                <input type="text" id="input-produtos-higiene" placeholder="Adicionar item...">
+                <button type="submit">Adicionar</button>
+            </form>
         </section>
     </main>
 
+    <!-- Referência ao JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
