@@ -2,6 +2,12 @@ header{
     background-color: aqua;
     padding: 20px; 
     text-align: center;
-    border-bottom: 5px solid #4514e8;
+    border-bottom: 5px solid #3208bc;
 }
 
+h2{
+    background-color: aqua;
+    padding: 20px; 
+    text-align: center;
+    border-bottom: 5px solid #0d0230;
+}
