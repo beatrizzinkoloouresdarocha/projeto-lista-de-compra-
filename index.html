@@ -4,80 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Projeto lista de compra</title>
+    <title>Projeto Lista de Compras</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <header>
-    <h1>Lista de Compras</h1>
+        <h1>Lista de Compras</h1>
     </header>
 
     <main>
-    <h2>Frutas e Verduras</h2>
-    <ul id="Frutas e Verduras">
-        <li>Maçã</li>
-        <li>Banana</li>
-        <li>Uva</li>
-        <li>Melancia</li>
-        <li>Alface</li>
-    </ul>
-    <div class="form-section">
-        <input type="text" id="novo-item-frutas" placeholder="Novo item...">
-        <button onclick="adicionarItem('frutas-verduras', 'novo-item-frutas')">Adicionar</button>
-    </div>
+        <h2>Frutas e Verduras</h2>
+        <ul id="frutas-verduras">
+            <li>Maçã</li>
+            <li>Banana</li>
+            <li>Uva</li>
+            <li>Melancia</li>
+            <li>Alface</li>
+        </ul>
+        <div class="form-section">
+            <input type="text" id="novo-item-frutas" placeholder="Novo item...">
+            <button onclick="adicionarItem('frutas-verduras', 'novo-item-frutas')">Adicionar</button>
+        </div>
 
-    <h2>Produtos diversos</h2>
-    <ul id="Produtos diversos">
-        <li>Macarrão</li>
-        <li>Carne de frango</li>
-        <li>Chocolate</li>
-        <li>vinho</li>
-        <li>Bolacha</li>
-        <li>Vinagre</li>
-        <li>Gelatina</li>
-        <li>Bolo</li>
-        <li>Leite</li>
-        <li>Celular</li>
-        <li>Salgadinhos</li>
-        <li>Brigadeiro</li>
-        <li>Óleo</li>
-        <li>Pão</li>
-        <li>Torta</li>
-        <li>Farinha de trigo</li>
-        <li>Tempero pronto</li>
-        <li>Açucar</li>
-        <li>Fermento</li>
-    </ul>
-    <div class="form-section">
-        <input type="text" id="novo-item-diversos" placeholder="Novo item...">
-        <button onclick="adicionarItem('produtos-diversos', 'novo-item-diversos')">Adicionar</button>
+        <h2>Produtos Diversos</h2>
+        <ul id="produtos-diversos">
+            <li>Macarrão</li>
+            <li>Carne de frango</li>
+            <li>Chocolate</li>
+            <li>Vinho</li>
+            <li>Bolacha</li>
+            <li>Vinagre</li>
+            <li>Gelatina</li>
+            <li>Bolo</li>
+            <li>Leite</li>
+            <li>Celular</li>
+            <li>Salgadinhos</li>
+            <li>Brigadeiro</li>
+            <li>Óleo</li>
+            <li>Pão</li>
+            <li>Torta</li>
+            <li>Farinha de trigo</li>
+            <li>Tempero pronto</li>
+            <li>Açúcar</li>
+            <li>Fermento</li>
+        </ul>
+        <div class="form-section">
+            <input type="text" id="novo-item-diversos" placeholder="Novo item...">
+            <button onclick="adicionarItem('produtos-diversos', 'novo-item-diversos')">Adicionar</button>
+        </div>
 
-    <h2>Carnes e proteinas</h2>
-    <ul id="Carnes e proteinas">
-        <li>Bife</li>
-        <li>Presunto</li>
-        <li>Linguiça</li>
-        <li>Frango</li>
-    </ul>
-    <div class="form-section">
-        <input type="text" id="novo-item-carnes" placeholder="Novo item...">
-        <button onclick="adicionarItem('carnes-proteinas', 'novo-item-carnes')">Adicionar</button>
-    </div>
+        <h2>Carnes e Proteínas</h2>
+        <ul id="carnes-proteinas">
+            <li>Bife</li>
+            <li>Presunto</li>
+            <li>Linguiça</li>
+            <li>Frango</li>
+        </ul>
+        <div class="form-section">
+            <input type="text" id="novo-item-carnes" placeholder="Novo item...">
+            <button onclick="adicionarItem('carnes-proteinas', 'novo-item-carnes')">Adicionar</button>
+        </div>
 
-    <h2>Produtos de higiene</h2>
-    <ul id="Produtos de higiene">
-        <li>Desodorante</li>
-        <li>Creme dental</li>
-        <li>Escova de dentes</li>
-        <li>Shampoos</li>
-        <li>Sabonetes</li>
-    </ul>
-    <div class="form-section">
-        <input type="text" id="novo-item-higiene" placeholder="Novo item...">
-        <button onclick="adicionarItem('produtos-higiene', 'novo-item-higiene')">Adicionar</button>
-    </div>
-   
+        <h2>Produtos de Higiene</h2>
+        <ul id="produtos-higiene">
+            <li>Desodorante</li>
+            <li>Creme dental</li>
+            <li>Escova de dentes</li>
+            <li>Shampoos</li>
+            <li>Sabonetes</li>
+        </ul>
+        <div class="form-section">
+            <input type="text" id="novo-item-higiene" placeholder="Novo item...">
+            <button onclick="adicionarItem('produtos-higiene', 'novo-item-higiene')">Adicionar</button>
+        </div>
     </main>
-    
+
+    <script>
+        // Função para adicionar um novo item à lista
+        function adicionarItem(listaID, inputID) {
+            // Pega o elemento da lista pelo ID
+            var lista = document.getElementById(listaID);
+            // Pega o valor do input pelo ID
+            var novoItem = document.getElementById(inputID).value;
+            // Cria um novo elemento <li>
+            var novoElemento = document.createElement('li');
+            // Define o texto do novo elemento <li>
+            novoElemento.textContent = novoItem;
+            // Adiciona o novo elemento <li> à lista
+            lista.appendChild(novoElemento);
+            // Limpa o valor do input
+            document.getElementById(inputID).value = '';
+        }
+    </script>
 </body>
 </html>
