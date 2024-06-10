@@ -68,6 +68,11 @@
                 <li>Linguiça</li>
                 <li>Frango</li>
             </ul>
+            <!-- Adicionando um formulário para adicionar itens -->
+            <form onsubmit="adicionarItem('input-carnes-proteinas', 'lista-carnes-proteinas'); return false;">
+                <input type="text" id="input-carnes-proteinas" placeholder="Adicionar item...">
+                <button type="submit">Adicionar</button>
+            </form>
         </section>
 
         <!-- Seção Produtos de Higiene -->
@@ -87,5 +92,22 @@
         </section>
     </main>
 
+    <script>
+        function adicionarItem(inputId, listaId) {
+            var input = document.getElementById(inputId);
+            var lista = document.getElementById(listaId);
+            var novoItem = input.value.trim();
+
+            if (novoItem) {
+                var li = document.createElement('li');
+                li.textContent = novoItem;
+                lista.appendChild(li);
+                input.value = '';
+                input.focus();
+            } else {
+                alert('Por favor, insira um item.');
+            }
+        }
+    </script>
 </body>
 </html>
