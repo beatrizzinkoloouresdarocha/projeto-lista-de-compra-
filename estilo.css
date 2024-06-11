@@ -55,3 +55,8 @@ button{
     width: 5%;
 }
 
+.apagar-btn {
+    margin-left: 10px;
+    color: rgb(58, 235, 208);
+    cursor: pointer;
+}
