@@ -81,8 +81,7 @@
 
     <script>
         // Função para adicionar um novo item à lista
-        function adicionarItem(event, listaID, inputID) {
-            event.preventDefault(); // Prevenir o envio do formulário
+        function adicionarItem(listaID, inputID) {
             var lista = document.getElementById(listaID);
             var novoItem = document.getElementById(inputID).value.trim();
             if (novoItem !== "") {
@@ -93,12 +92,13 @@
             }
         }
 
-         // Função para apagar o item da lista
-         function apagarItem(botao) {
+        // Função para apagar o item da lista
+        function apagarItem(botao) {
             var item = botao.parentNode;
             var lista = item.parentNode;
             lista.removeChild(item);
         }
     </script>
+
 </body>
 </html>
