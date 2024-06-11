@@ -92,6 +92,13 @@
                 document.getElementById(inputID).value = '';
             }
         }
+
+         // Função para apagar o item da lista
+         function apagarItem(botao) {
+            var item = botao.parentNode;
+            var lista = item.parentNode;
+            lista.removeChild(item);
+        }
     </script>
 </body>
 </html>
