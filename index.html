@@ -24,6 +24,7 @@
         <div class="form-section">
             <input type="text" id="novo-item-frutas" placeholder="Novo item...">
             <button onclick="adicionarItem('frutas-verduras', 'novo-item-frutas')">Adicionar</button>
+            <button class="apagar-selecionados-btn" onclick="apagarSelecionados('frutas-verduras')">Apagar Selecionados</button>
         </div>
 
         <h2>Produtos Diversos</h2>
@@ -51,6 +52,7 @@
         <div class="form-section">
             <input type="text" id="novo-item-diversos" placeholder="Novo item...">
             <button onclick="adicionarItem('produtos-diversos', 'novo-item-diversos')">Adicionar</button>
+            <button class="apagar-selecionados-btn" onclick="apagarSelecionados('frutas-verduras')">Apagar Selecionados</button>
         </div>
 
         <h2>Carnes e Proteínas</h2>
@@ -63,6 +65,7 @@
         <div class="form-section">
             <input type="text" id="novo-item-carnes" placeholder="Novo item...">
             <button onclick="adicionarItem('carnes-proteinas', 'novo-item-carnes')">Adicionar</button>
+            <button class="apagar-selecionados-btn" onclick="apagarSelecionados('frutas-verduras')">Apagar Selecionados</button>
         </div>
 
         <h2>Produtos de Higiene</h2>
@@ -86,7 +89,7 @@
             var novoItem = document.getElementById(inputID).value;
             if (novoItem.trim() !== '') {
                 var novoElemento = document.createElement('li');
-                novoElemento.textContent = novoItem;
+                novoElemento.innerHTML = '<input type="checkbox"> ' + novoItem;
 
                 // Adiciona o botão apagar
                 var apagarBtn = document.createElement('span');
@@ -104,6 +107,18 @@
         function apagarItem(botao) {
             var item = botao.parentNode;
             item.parentNode.removeChild(item);
+        }
+
+        // Função para apagar todos os itens selecionados
+        function apagarSelecionados(listaID) {
+            var lista = document.getElementById(listaID);
+            var itens = lista.getElementsByTagName('li');
+            for (var i = itens.length - 1; i >= 0; i--) {
+                var checkbox = itens[i].querySelector('input[type="checkbox"]');
+                if (checkbox && checkbox.checked) {
+                    lista.removeChild(itens[i]);
+                }
+            }
         }
     </script>
 </body>
