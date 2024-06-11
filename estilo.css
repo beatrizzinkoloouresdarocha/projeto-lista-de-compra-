@@ -9,7 +9,7 @@ body {
 /* Estilo do header */
 header {
     background-color: #343a40;
-    color: #99f2fb;
+    color: #490af7;
     padding: 20px;
     text-align: center;
 }
@@ -52,7 +52,7 @@ li {
 button {
     padding: 5px 10px;
     margin-left: 10px;
-    background-color: #ff2216;
+    background-color: #ff6016;
     color: white;
     border: none;
     border-radius: 5px;
