@@ -21,7 +21,7 @@
             <li><input type="checkbox"> Melancia <button onclick="apagarItem(this)">Apagar</button></li>
             <li><input type="checkbox"> Alface <button onclick="apagarItem(this)">Apagar</button></li>
         </ul>
-        <div class="form-section">
+        <div>
             <input type="text" id="novo-item-frutas" placeholder="Novo item...">
             <button onclick="adicionarItem('frutas-verduras', 'novo-item-frutas')">Adicionar</button>
         </div>
@@ -48,17 +48,19 @@
             <li><input type="checkbox"> Açúcar <button onclick="apagarItem(this)">Apagar</button></li>
             <li><input type="checkbox"> Fermento <button onclick="apagarItem(this)">Apagar</button></li>
         </ul>
-        <div class="form-section">
+        <div>
             <input type="text" id="novo-item-diversos" placeholder="Novo item...">
             <button onclick="adicionarItem('produtos-diversos', 'novo-item-diversos')">Adicionar</button>
         </div>
 
         <h2>Carnes e Proteínas</h2>
-        <li><input type="checkbox"> Bife <button onclick="apagarItem(this)">Apagar</button></li>
-        <li><input type="checkbox"> Presunto <button onclick="apagarItem(this)">Apagar</button></li>
-        <li><input type="checkbox"> Linguiça <button onclick="apagarItem(this)">Apagar</button></li>
-        <li><input type="checkbox"> Frango <button onclick="apagarItem(this)">Apagar</button></li>
-        <div class="form-section">
+        <ul id="carnes-proteinas">
+            <li><input type="checkbox"> Bife <button onclick="apagarItem(this)">Apagar</button></li>
+            <li><input type="checkbox"> Presunto <button onclick="apagarItem(this)">Apagar</button></li>
+            <li><input type="checkbox"> Linguiça <button onclick="apagarItem(this)">Apagar</button></li>
+            <li><input type="checkbox"> Frango <button onclick="apagarItem(this)">Apagar</button></li>
+        </ul>
+        <div>
             <input type="text" id="novo-item-carnes" placeholder="Novo item...">
             <button onclick="adicionarItem('carnes-proteinas', 'novo-item-carnes')">Adicionar</button>
         </div>
@@ -71,7 +73,7 @@
             <li><input type="checkbox"> Hidratante <button onclick="apagarItem(this)">Apagar</button></li>
             <li><input type="checkbox"> Sabonete <button onclick="apagarItem(this)">Apagar</button></li>
         </ul>
-        <div class="form-section">
+        <div>
             <input type="text" id="novo-item-higiene" placeholder="Novo item...">
             <button onclick="adicionarItem('produtos-higiene', 'novo-item-higiene')">Adicionar</button>
         </div>
@@ -84,8 +86,26 @@
             var novoItem = document.getElementById(inputID).value.trim();
             if (novoItem !== "") {
                 var novoElemento = document.createElement('li');
-                novoElemento.textContent = novoItem;
+
+                // Criar o checkbox
+                var checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                novoElemento.appendChild(checkbox);
+
+                // Adicionar o texto do item
+                var texto = document.createTextNode(' ' + novoItem + ' ');
+                novoElemento.appendChild(texto);
+
+                // Criar o botão de apagar
+                var botaoApagar = document.createElement('button');
+                botaoApagar.textContent = 'Apagar';
+                botaoApagar.onclick = function() { apagarItem(this); };
+                novoElemento.appendChild(botaoApagar);
+
+                // Adicionar o novo item à lista
                 lista.appendChild(novoElemento);
+
+                // Limpar o campo de entrada
                 document.getElementById(inputID).value = '';
             }
         }
@@ -97,6 +117,5 @@
             lista.removeChild(item);
         }
     </script>
-
 </body>
 </html>
