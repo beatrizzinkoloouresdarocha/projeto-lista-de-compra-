@@ -84,16 +84,26 @@
         function adicionarItem(listaID, inputID) {
             var lista = document.getElementById(listaID);
             var novoItem = document.getElementById(inputID).value;
-            var novoElemento = document.createElement('li');
-            novoElemento.textContent = novoItem;
-            lista.appendChild(novoElemento);
-            document.getElementById(inputID).value = '';
+            if (novoItem.trim() !== '') {
+                var novoElemento = document.createElement('li');
+                novoElemento.textContent = novoItem;
+
+                // Adiciona o botão apagar
+                var apagarBtn = document.createElement('span');
+                apagarBtn.textContent = ' [apagar]';
+                apagarBtn.className = 'apagar-btn';
+                apagarBtn.onclick = function() { apagarItem(apagarBtn); };
+
+                novoElemento.appendChild(apagarBtn);
+                lista.appendChild(novoElemento);
+                document.getElementById(inputID).value = '';
+            }
         }
 
-        // Função para apagar um item da lista
+        // Função para apagar um item específico da lista
         function apagarItem(botao) {
-            var item = botao.parentNode.parentNode.querySelector('ul');
-            item.removeChild(item.lastElementChild);
+            var item = botao.parentNode;
+            item.parentNode.removeChild(item);
         }
     </script>
 </body>
